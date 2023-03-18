@@ -35,7 +35,7 @@ const PostQueue = [];
 const PostBox = document.getElementById('PostBox');
 
 document.getElementById('SubmitButton').addEventListener('click', () => {
-    let new_post = new Post(PostId.value, AuthorId.value, CreatedDate.value, UpdatedDate.value, Title.value, Content.value,  PublishStatus.value, CategoryId.value);
+    let new_post = new Post(PostId.value, AuthorId.value, CreatedDate.value, UpdatedDate.value, Title.value, Content.value, PublishStatus.value, CategoryId.value);
     PostQueue.push(new_post);
     console.log(PostQueue);
     clearInputField();
@@ -63,20 +63,20 @@ function sendPostToHub(post) {
     event.preventDefault();
 }
 
-function addPostToList(postId, authorId, createdDate, updatedDate,title, content, publishStatus, categoryId) {
-    console.log("addd nen");
-    let post = new Post(postId, authorId, createdDate, updatedDate, title, content, publishStatus, categoryId);
-    console.log(post);
-    console.log("add xong");
+function addPostToList(postId, authorName, authorEmail, createdDate, updatedDate, title, content, statusName, categoryName) {
+    var html = '<div class="content"><h6>#'+ postId + '/' + categoryName + '-' + statusName +'</h6><h2>' + title + '</h2>' +
+        '<p class="border-bottom pb-20">'+ content + '</p><h6>By'+ authorName + '-' + authorEmail + '</h6></div>';
+    console.log(html);
+    $("#PostBox").prepend(html);
 
-    let container = document.createElement('div');
-    let sender = document.createElement('p');
-    sender.className = "sender";
-    sender.innerHTML = post.AuthorId;
-    let text = document.createElement('p');
-    text.innerHTML = post.Content;
+    //let container = document.createElement('div');
+    //let sender = document.createElement('p');
+    //sender.className = "sender";
+    //sender.innerHTML = post.AuthorId;
+    //let text = document.createElement('p');
+    //text.innerHTML = post.Content;
 
-    container.appendChild(sender);
-    container.appendChild(text);
-    PostBox.appendChild(container);
+    //container.appendChild(sender);
+    //container.appendChild(text);
+    //PostBox.appendChild(container);
 }

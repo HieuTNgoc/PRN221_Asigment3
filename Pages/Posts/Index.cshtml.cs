@@ -44,6 +44,7 @@ namespace SignalRAssignment.Pages.Posts
                 Post = await _context.Posts
                 .Include(p => p.Author)
                 .Include(p => p.Category)
+                .OrderByDescending(x => x.PostId)
                 .ToListAsync();
             }
             PostCreate.CreatedDate = DateTime.Now;

@@ -28,7 +28,8 @@ namespace SignalRAssignment.Hubs
 
             _context.Posts.Add(Post);
             await _context.SaveChangesAsync();
-            await Clients.All.SendAsync("ReceivePost", Post.PostId.ToString(), Post.AuthorId.ToString(), Post.CreatedDate.ToString(), Post.UpdatedDate.ToString(), Post.Title.ToString(),Post.Content.ToString(), Post.PublishStatus.ToString(), Post.CategoryId.ToString());
+            var post = await _context.Posts.Include(p => p.Author).Include(p => p.Category).OrderByDescending(x => x.PostId).FirstOrDefaultAsync();
+            await Clients.All.SendAsync("ReceivePost", post.PostId.ToString(), post.Author.FullName.ToString(), post.Author.Email.ToString(), post.CreatedDate.ToString(), post.UpdatedDate.ToString(), post.Title.ToString(),post.Content.ToString(), post.statusName.ToString(), Post.Category.CategoryName.ToString());
         }
 
     }
