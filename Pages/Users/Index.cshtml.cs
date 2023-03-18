@@ -11,21 +11,35 @@ namespace SignalRAssignment.Pages.Users
 {
     public class IndexModel : PageModel
     {
-        private readonly SignalRAssignment.Models.PostAppContext _context;
+        private readonly PostAppContext _context;
 
-        public IndexModel(SignalRAssignment.Models.PostAppContext context)
+        public IndexModel(PostAppContext context)
         {
             _context = context;
         }
 
         public IList<AppUser> AppUser { get;set; } = default!;
 
-        public async Task OnGetAsync()
+        public AppUser Account { get; set; } = default;
+
+        public async Task<IActionResult> OnGetAsync()
         {
+            int? curr_acc_id = HttpContext.Session.GetInt32("UserId");
+            if (curr_acc_id == null)
+            {
+                return Redirect("/Users/Login");
+            }
+
+            Account = await _context.AppUsers.FirstOrDefaultAsync(m => m.UserId.Equals(curr_acc_id));
+            if (Account == null)
+            {
+                return NotFound();
+            }
             if (_context.AppUsers != null)
             {
                 AppUser = await _context.AppUsers.ToListAsync();
             }
+            return Page();
         }
     }
 }

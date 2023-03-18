@@ -5,15 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using SignalRAssignment.Models;
 
 namespace SignalRAssignment.Pages.Users
 {
     public class CreateModel : PageModel
     {
-        private readonly SignalRAssignment.Models.PostAppContext _context;
+        private readonly PostAppContext _context;
 
-        public CreateModel(SignalRAssignment.Models.PostAppContext context)
+        public CreateModel(PostAppContext context)
         {
             _context = context;
         }
@@ -25,9 +26,24 @@ namespace SignalRAssignment.Pages.Users
 
         [BindProperty]
         public AppUser AppUser { get; set; } = default!;
-        
 
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
+        public AppUser Account { get; set; } = default;
+
+        public async Task<IActionResult> OnGetAsync()
+        {
+            int? curr_acc_id = HttpContext.Session.GetInt32("UserId");
+            if (curr_acc_id == null)
+            {
+                return Redirect("/Users/Login");
+            }
+
+            Account = await _context.AppUsers.FirstOrDefaultAsync(m => m.UserId.Equals(curr_acc_id));
+            if (Account == null)
+            {
+                return NotFound();
+            }
+            return Page();
+        }
         public async Task<IActionResult> OnPostAsync()
         {
           if (!ModelState.IsValid || _context.AppUsers == null || AppUser == null)

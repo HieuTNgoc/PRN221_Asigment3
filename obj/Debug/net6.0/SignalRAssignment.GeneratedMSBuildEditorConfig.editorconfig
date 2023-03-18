@@ -16,12 +16,52 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\FPT-WorkSpace\PRN221\SignalR\SignalRAssignment
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/FPT-WorkSpace/PRN221/SignalR/SignalRAssignment/Pages/Categories/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT-WorkSpace/PRN221/SignalR/SignalRAssignment/Pages/Categories/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT-WorkSpace/PRN221/SignalR/SignalRAssignment/Pages/Categories/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT-WorkSpace/PRN221/SignalR/SignalRAssignment/Pages/Categories/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT-WorkSpace/PRN221/SignalR/SignalRAssignment/Pages/Categories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/FPT-WorkSpace/PRN221/SignalR/SignalRAssignment/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/FPT-WorkSpace/PRN221/SignalR/SignalRAssignment/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT-WorkSpace/PRN221/SignalR/SignalRAssignment/Pages/Posts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9zdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT-WorkSpace/PRN221/SignalR/SignalRAssignment/Pages/Posts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9zdHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT-WorkSpace/PRN221/SignalR/SignalRAssignment/Pages/Posts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9zdHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT-WorkSpace/PRN221/SignalR/SignalRAssignment/Pages/Posts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9zdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT-WorkSpace/PRN221/SignalR/SignalRAssignment/Pages/Posts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9zdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/FPT-WorkSpace/PRN221/SignalR/SignalRAssignment/Pages/Privacy.cshtml]
@@ -50,6 +90,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/FPT-WorkSpace/PRN221/SignalR/SignalRAssignment/Pages/Users/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT-WorkSpace/PRN221/SignalR/SignalRAssignment/Pages/Users/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT-WorkSpace/PRN221/SignalR/SignalRAssignment/Pages/Users/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/FPT-WorkSpace/PRN221/SignalR/SignalRAssignment/Pages/_ViewImports.cshtml]

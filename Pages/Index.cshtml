@@ -5,6 +5,20 @@
 }
 
 <div class="container">
+
+    <div class="text-center">
+        @{
+            if (HttpContext.Session.GetString("FullName") == null)
+            {
+                <h1 class="display-4">Login & start shopping!!!</h1>
+            }
+            else
+            {
+                <h1 class="display-4">Welcome @HttpContext.Session.GetString("FullName")</h1>
+            }
+        }
+
+    </div>
     <div class="row p-1">
         <div class="col-1">User</div>
         <div class="col-5"><input type="text" id="userInput" /></div>
@@ -15,7 +29,7 @@
     </div>
     <div class="row p-1">
         <div class="col-6 text-end">
-            <input type="button" id="sendButton" value="Send Message" />
+            <input type="button" id="sendButton" value="Add Post" />
         </div>
     </div>
     <div class="row p-1">

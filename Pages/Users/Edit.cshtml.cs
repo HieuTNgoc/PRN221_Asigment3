@@ -12,9 +12,9 @@ namespace SignalRAssignment.Pages.Users
 {
     public class EditModel : PageModel
     {
-        private readonly SignalRAssignment.Models.PostAppContext _context;
+        private readonly PostAppContext _context;
 
-        public EditModel(SignalRAssignment.Models.PostAppContext context)
+        public EditModel(PostAppContext context)
         {
             _context = context;
         }
@@ -22,14 +22,29 @@ namespace SignalRAssignment.Pages.Users
         [BindProperty]
         public AppUser AppUser { get; set; } = default!;
 
+
+        public AppUser Account { get; set; } = default;
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            int? curr_acc_id = HttpContext.Session.GetInt32("UserId");
+            if (curr_acc_id == null)
+            {
+                return Redirect("/Users/Login");
+            }
+
+            Account = await _context.AppUsers.FirstOrDefaultAsync(m => m.UserId.Equals(curr_acc_id));
+            if (Account == null)
+            {
+                return NotFound();
+            }
+
             if (id == null || _context.AppUsers == null)
             {
                 return NotFound();
             }
 
-            var appuser =  await _context.AppUsers.FirstOrDefaultAsync(m => m.UserId == id);
+            var appuser = await _context.AppUsers.FirstOrDefaultAsync(m => m.UserId == id);
             if (appuser == null)
             {
                 return NotFound();
@@ -38,8 +53,7 @@ namespace SignalRAssignment.Pages.Users
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see https://aka.ms/RazorPagesCRUD.
+       
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
