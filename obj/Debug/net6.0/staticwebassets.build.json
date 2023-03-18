@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dOP4nDCbamqcyjLXZmW/TG987djdPf+9aWEbVF/luL4=",
+  "Hash": "kJaNhvJRDcydtJOJZDCTvhnP9lh5UjfQGKrIm4+dDiI=",
   "Source": "SignalRAssignment",
   "BasePath": "_content/SignalRAssignment",
   "Mode": "Default",
@@ -102,6 +102,23 @@
       "OriginalItemSpec": "wwwroot\\js\\Chat.js"
     },
     {
+      "Identity": "D:\\FPT-WorkSpace\\PRN221\\SignalR\\SignalRAssignment\\wwwroot\\js\\Post.js",
+      "SourceId": "SignalRAssignment",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\FPT-WorkSpace\\PRN221\\SignalR\\SignalRAssignment\\wwwroot\\",
+      "BasePath": "_content/SignalRAssignment",
+      "RelativePath": "js/Post.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Post.js"
+    },
+    {
       "Identity": "D:\\FPT-WorkSpace\\PRN221\\SignalR\\SignalRAssignment\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",
       "SourceId": "SignalRAssignment",
       "SourceType": "Discovered",
@@ -134,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\signalr\\dist\\browser\\signalr.min.js"
+    },
+    {
+      "Identity": "D:\\FPT-WorkSpace\\PRN221\\SignalR\\SignalRAssignment\\wwwroot\\js\\SignalrRequestHandler.js",
+      "SourceId": "SignalRAssignment",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\FPT-WorkSpace\\PRN221\\SignalR\\SignalRAssignment\\wwwroot\\",
+      "BasePath": "_content/SignalRAssignment",
+      "RelativePath": "js/SignalrRequestHandler.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\SignalrRequestHandler.js"
     },
     {
       "Identity": "D:\\FPT-WorkSpace\\PRN221\\SignalR\\SignalRAssignment\\wwwroot\\js\\site.js",

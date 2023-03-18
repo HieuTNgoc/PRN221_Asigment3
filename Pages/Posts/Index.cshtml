@@ -1,9 +1,39 @@
 ﻿@page
 @model SignalRAssignment.Pages.Posts.IndexModel
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
+<div class="row">
+    <div class="col-md-4">
+        <div>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PostCreate.PostId" id="PostId" />
+            <input type="hidden" asp-for="PostCreate.CreatedDate" id="CreatedDate" />
+            <input type="hidden" asp-for="PostCreate.UpdatedDate" id="UpdatedDate" />
+            <input type="hidden" asp-for="PostCreate.AuthorId" id="AuthorId" />
+            <div class="form-group">
+                <label asp-for="PostCreate.Title" class="control-label"></label>
+                <input asp-for="PostCreate.Title" class="form-control" id="Title"/>
+                <span asp-validation-for="PostCreate.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PostCreate.Content" class="control-label"></label>
+                <input asp-for="PostCreate.Content" class="form-control" id="Content"/>
+                <span asp-validation-for="PostCreate.Content" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PostCreate.PublishStatus" class="control-label"></label>
+                <select asp-for="PostCreate.PublishStatus" class="form-control" asp-items="ViewBag.PublishStatus" id="PublishStatus"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="PostCreate.CategoryId" class="control-label"></label>
+                <select asp-for="PostCreate.CategoryId" class="form-control" asp-items="ViewBag.CategoryId" id="CategoryId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" id="SubmitButton" />
+            </div>
+        </div>
+    </div>
+</div>
+
 <table class="table">
     <thead>
         <tr>
@@ -31,7 +61,7 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody id="PostBox">
         @foreach (var item in Model.Post)
         {
             <tr>
@@ -65,3 +95,7 @@
         }
     </tbody>
 </table>
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/SignalrRequestHandler.js"></script>
+<script src="~/js/Post.js"></script>
+

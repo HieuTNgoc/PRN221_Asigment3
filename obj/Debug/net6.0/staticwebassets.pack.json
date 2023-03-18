@@ -17,6 +17,14 @@
       "PackagePath": "staticwebassets\\js\\Chat.js"
     },
     {
+      "Id": "D:\\FPT-WorkSpace\\PRN221\\SignalR\\SignalRAssignment\\wwwroot\\js\\Post.js",
+      "PackagePath": "staticwebassets\\js\\Post.js"
+    },
+    {
+      "Id": "D:\\FPT-WorkSpace\\PRN221\\SignalR\\SignalRAssignment\\wwwroot\\js\\SignalrRequestHandler.js",
+      "PackagePath": "staticwebassets\\js\\SignalrRequestHandler.js"
+    },
+    {
       "Id": "D:\\FPT-WorkSpace\\PRN221\\SignalR\\SignalRAssignment\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",
       "PackagePath": "staticwebassets\\js\\signalr\\dist\\browser\\signalr.js"
     },
