@@ -64,8 +64,8 @@ function sendPostToHub(post) {
 }
 
 function addPostToList(postId, authorName, authorEmail, createdDate, updatedDate, title, content, statusName, categoryName) {
-    var html = '<div class="content"><h6>#'+ postId + '/' + categoryName + '-' + statusName +'</h6><h2>' + title + '</h2>' +
-        '<p class="border-bottom pb-20">'+ content + '</p><h6>By'+ authorName + '-' + authorEmail + '</h6></div>';
+    var html = '<div class="content"><h6>#' + postId + '/' + categoryName + '-' + statusName + '</h6><h2>' + title + '</h2>' +
+        '<p class="border-bottom pb-20">' + content + '</p><h6>By' + authorName + '-' + authorEmail + '</h6><h6>Created At ' + createdDate + '- Last Updated At ' + updatedDate + '</h6></div>';
     console.log(html);
     $("#PostBox").prepend(html);
 

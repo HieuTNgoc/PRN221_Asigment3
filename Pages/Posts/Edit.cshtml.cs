@@ -80,7 +80,7 @@ namespace SignalRAssignment.Pages.Posts
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Mine");
         }
 
         private bool PostExists(int id)

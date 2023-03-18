@@ -84,7 +84,7 @@
                     </div>
                     <div class="form-group">
                         <label asp-for="PostCreate.Content" class="control-label"></label>
-                        <input asp-for="PostCreate.Content" class="form-control" id="Content" />
+                        <textarea asp-for="PostCreate.Content" class="form-control" id="Content" ></textarea>
                         <span asp-validation-for="PostCreate.Content" class="text-danger"></span>
                     </div>
                     <div class="form-group">
@@ -115,6 +115,7 @@
                             @Html.DisplayFor(modelItem => item.Content)
                         </p>
                         <h6>By @Html.DisplayFor(modelItem => item.Author.FullName) - @Html.DisplayFor(modelItem => item.Author.Email)</h6>
+                        <h6>Created At @Html.DisplayFor(modelItem => item.CreatedDate) - Last Updated At @Html.DisplayFor(modelItem => item.UpdatedDate)</h6>
                     </div>
                 }
             </div>
