@@ -20,6 +20,7 @@ namespace SignalRAssignment.Pages.Posts
 
         public IList<Post> Post { get;set; } = default!;
         public AppUser Account { get; set; } = default;
+        public PostStatus Status { get; set; } = default;
 
         public async Task<IActionResult> OnGetAsync()
         {
@@ -38,7 +39,8 @@ namespace SignalRAssignment.Pages.Posts
             {
                 Post = await _context.Posts
                 .Include(p => p.Author)
-                .Include(p => p.Category).ToListAsync();
+                .Include(p => p.Category)
+                .ToListAsync();
             }
             return Page();
         
