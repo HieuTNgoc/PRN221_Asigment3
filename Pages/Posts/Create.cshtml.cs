@@ -49,7 +49,7 @@ namespace SignalRAssignment.Pages.Posts
         {
             Post.CreatedDate = DateTime.Now;
             Post.UpdatedDate = DateTime.Now;
-            Post.AuthorId = Account.UserId;
+            Post.AuthorId = HttpContext.Session.GetInt32("UserId");
             Post.Author = Account;
 
 

@@ -34,19 +34,19 @@
             @Html.DisplayNameFor(model => model.Post.PublishStatus)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Post.PublishStatus)
+            @Html.DisplayFor(model => model.Post.statusName)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Post.Author)
+            @Html.DisplayNameFor(model => model.Post.AuthorId)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Post.Author.Email)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Post.Category)
+            @Html.DisplayNameFor(model => model.Post.CategoryId)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Post.Category.CategoryId)
+            @Html.DisplayFor(model => model.Post.Category.CategoryName)
         </dd>
     </dl>
     

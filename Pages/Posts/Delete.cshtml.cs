@@ -41,7 +41,7 @@ namespace SignalRAssignment.Pages.Posts
                 return NotFound();
             }
 
-            var post = await _context.Posts.FirstOrDefaultAsync(m => m.PostId == id);
+            var post = await _context.Posts.Include(p => p.Author).Include(p => p.Category).FirstOrDefaultAsync(m => m.PostId == id);
 
             if (post == null)
             {

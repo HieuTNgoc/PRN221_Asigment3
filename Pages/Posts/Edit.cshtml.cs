@@ -42,19 +42,21 @@ namespace SignalRAssignment.Pages.Posts
                 return NotFound();
             }
 
-            var post =  await _context.Posts.FirstOrDefaultAsync(m => m.PostId == id);
+            var post = await _context.Posts.Include(p => p.Author).Include(p => p.Category).FirstOrDefaultAsync(m => m.PostId == id);
             if (post == null)
             {
                 return NotFound();
             }
             Post = post;
-           ViewData["AuthorId"] = new SelectList(_context.AppUsers, "UserId", "Email");
-           ViewData["CategoryId"] = new SelectList(_context.PostCategories, "CategoryId", "CategoryId");
+            ViewData["CategoryId"] = new SelectList(_context.PostCategories, "CategoryId", "CategoryName");
+            ViewData["PublishStatus"] = new SelectList(PostStatus.getSattus(), "PublishStatus", "StatusName");
+
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
+            Post.UpdatedDate = DateTime.Now;
             if (!ModelState.IsValid)
             {
                 return Page();
@@ -83,7 +85,7 @@ namespace SignalRAssignment.Pages.Posts
 
         private bool PostExists(int id)
         {
-          return (_context.Posts?.Any(e => e.PostId == id)).GetValueOrDefault();
+            return (_context.Posts?.Any(e => e.PostId == id)).GetValueOrDefault();
         }
     }
 }
