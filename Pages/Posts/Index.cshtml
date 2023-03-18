@@ -2,74 +2,21 @@
 @model SignalRAssignment.Pages.Posts.IndexModel
 
 
-@*
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Post[0].CreatedDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Post[0].UpdatedDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Post[0].Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Post[0].Content)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Post[0].PublishStatus)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Post[0].AuthorId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Post[0].CategoryId)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody id="PostBox">
-        @foreach (var item in Model.Post)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreatedDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UpdatedDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Content)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.statusName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Author.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category.CategoryName)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.PostId">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.PostId">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.PostId">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>*@
-
-
-
 <div class='container'>
     <div class='navigation'>
         <div class="row">
+            <form>
+                <p> Select Post Category:
+                    <br />
+                    <select asp-for="SelectedCategory" asp-items="Model.Categories">
+                        <option value="0">All</option>
+                    </select>
+                    <br />
+                    Search by title & content:
+                    <input type="text" asp-for="SearchString" />
+                    <input type="submit" value="Filter" />
+                </p>
+            </form>
             <div>
                 <div>
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -104,7 +51,7 @@
     </div>
     <div class='main-content'>
         <div id="container">
-            <h1 class="fw-bold">Posts</h1>
+            <h1 class="fw-bold">Public Posts</h1>
             <div id="PostBox">
                 @foreach (var item in Model.Post)
                 {

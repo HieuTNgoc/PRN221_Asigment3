@@ -19,12 +19,20 @@ namespace SignalRAssignment.Pages.Posts
             _context = context;
         }
 
-        public IList<Post> Post { get;set; } = default!;
+        public IList<Post> Post { get; set; } = default!;
         public AppUser Account { get; set; } = default;
         public PostStatus Status { get; set; } = default;
 
         [BindProperty]
         public Post PostCreate { get; set; } = new Post();
+
+        [BindProperty(SupportsGet = true)]
+        public string? SearchString { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public int? SelectedCategory { get; set; }
+        public SelectList? Categories { get; set; }
+
 
         public async Task<IActionResult> OnGetAsync()
         {
@@ -41,11 +49,23 @@ namespace SignalRAssignment.Pages.Posts
             }
             if (_context.Posts != null)
             {
-                Post = await _context.Posts
-                .Include(p => p.Author)
-                .Include(p => p.Category)
-                .OrderByDescending(x => x.PostId)
-                .ToListAsync();
+                var post = from m in _context.Posts select m;
+
+                if (!string.IsNullOrEmpty(SearchString))
+                {
+                    post = post.Where(p => (p.Title.Contains(SearchString)) || (p.Content.Contains(SearchString)));
+                }
+
+                if (SelectedCategory != 0 && SelectedCategory != null)
+                {
+                    post = post.Where(p => p.CategoryId == SelectedCategory);
+                }
+                Post = await post.Where(p => p.PublishStatus == 1)
+                    .Include(p => p.Author)
+                    .Include(p => p.Category)
+                    .OrderByDescending(x => x.PostId)
+                    .ToListAsync();
+                Categories = new SelectList(_context.PostCategories, "CategoryId", "CategoryName");
             }
             PostCreate.CreatedDate = DateTime.Now;
             PostCreate.UpdatedDate = DateTime.Now;
